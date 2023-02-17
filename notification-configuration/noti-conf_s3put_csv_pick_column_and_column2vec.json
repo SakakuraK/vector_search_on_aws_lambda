@@ -1,0 +1,32 @@
+{
+	"LambdaFunctionConfigurations": [
+		{
+			"LambdaFunctionArn": "arn:aws:lambda:us-east-1:499388582542:function:testfunc_csv_pick_column",
+			"Events": ["s3:ObjectCreated:*"],
+			"Filter": {
+				"Key": {
+					"FilterRules": [
+						{
+							"Name": "prefix",
+							"Value": "base/"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LambdaFunctionArn": "arn:aws:lambda:us-east-1:499388582542:function:testfunc_column2vec",
+			"Events": ["s3:ObjectCreated:*"],
+			"Filter": {
+				"Key": {
+					"FilterRules": [
+						{
+							"Name": "prefix",
+							"Value": "description/"
+						}
+					]
+				}
+			}
+		}
+	]
+}
